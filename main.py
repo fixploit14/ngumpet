@@ -1,16 +1,9 @@
 import os
 
-print("[0] Tentang program")
-print("[1] Sembunyikan file")
-print("[2] Tampilkan file")
-print("[3] Keluar program")
-
-menu = input("Menu: ")
-
-if menu == "0":
+def tentang_program():
     print("Sedang dalam pengembangan.")
 
-elif menu == "1":
+def sembunyikan_file():
     direktori = input("Masukkan direktori yang akan disembunyikan filenya: ")
 
     if not os.path.isdir(direktori):
@@ -22,7 +15,7 @@ elif menu == "1":
             print(f"[*] Menyembunyikan file '{nama_file}'")
         print("[+] Selesai.")
 
-elif menu == "2":
+def tampilkan_file():
     direktori = input("Masukkan direktori yang akan ditampilkan filenya: ")
 
     if not os.path.isdir(direktori):
@@ -30,10 +23,29 @@ elif menu == "2":
     else:
         for nama_file in os.listdir(direktori):
             if nama_file.startswith("."):
-                nama_baru_file = nama_file[1:] 
+                nama_baru_file = nama_file[1:]
                 os.rename(os.path.join(direktori, nama_file), os.path.join(direktori, nama_baru_file))
                 print(f"[*] Menampilkan file '{nama_file}'")
         print("[+] Selesai.")
 
-elif menu == "3":
-    exit(0)
+while True:
+    print("[0] Tentang program")
+    print("[1] Sembunyikan file")
+    print("[2] Tampilkan file")
+    print("[3] Keluar program\n")
+
+    menu = input("Menu: ")
+
+    if menu == "0":
+        tentang_program()
+
+    elif menu == "1":
+        sembunyikan_file()
+
+    elif menu == "2":
+        tampilkan_file()
+
+    elif menu == "3":
+        exit(0)
+    else:
+        print("\nPilihan tidak valid. Silakan pilih menu yang sesuai.")
