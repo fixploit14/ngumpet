@@ -15,7 +15,8 @@ if menu == "1":
     else:
         for nama_file in os.listdir(direktori):
             nama_baru_file = "." + nama_file
-            os.rename(os.path.join(direktori, nama_file), os.path.join(direktori, nama_baru_file))
+            os.system(f"base64 {nama_file} > {nama_baru_file}")
+            # os.rename(os.path.join(direktori, nama_file), os.path.join(direktori, nama_baru_file))
             print(f"[*] Menyembunyikan file '{nama_file}'")
         print("[+] Selesai.")
 
