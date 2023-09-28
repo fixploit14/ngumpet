@@ -32,10 +32,8 @@ elif menu == "2":
             if nama_file.startswith("."):
                 nama_baru_file = nama_file[1:] 
                 os.rename(os.path.join(direktori, nama_file), os.path.join(direktori, nama_baru_file))
-                print(f"[*] menampilkan file '{nama_file}'")
+                print(f"[*] Menampilkan file '{nama_file}'")
         print("[+] Selesai.")
 
 elif menu == "3":
     exit(0)
-
-    
